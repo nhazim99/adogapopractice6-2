@@ -448,12 +448,15 @@
     }
 
     function speak(text) {
-      if (window.responsiveVoice) {
-        responsiveVoice.speak(text, "UK English Male");
-      } else {
-        console.error("ResponsiveVoice API is not available.");
-      }
-    }
+  if (text === "a") {
+    const audio = new Audio("sounds/a_article.m4a");
+    audio.play();
+  } else if (window.responsiveVoice) {
+    responsiveVoice.speak(text, "UK English Male");
+  } else {
+    console.error("ResponsiveVoice API not available.");
+  }
+}
 
     window.onload = function() {
       // Also run setScale() on load
